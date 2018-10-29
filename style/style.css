@@ -1,0 +1,14 @@
+.main-wrapper {
+  width: 1024px;
+  margin: 0 auto; }
+  .main-wrapper .sidebar {
+    float: left;
+    width: 30%;
+    background: #1b1b1b; }
+  .main-wrapper .container {
+    width: 67%;
+    float: right;
+    background: #ffffff;
+    color: #000000; }
+
+/*# sourceMappingURL=style.css.map */

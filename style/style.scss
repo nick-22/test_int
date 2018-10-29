@@ -1,0 +1,16 @@
+.main-wrapper {
+  width: 1024px;
+  margin: 0 auto;
+
+  .sidebar {
+    float: left;
+    width: 30%;
+    background: #1b1b1b;
+  }
+  .container {
+    width: 67%;
+    float: right;
+    background: #ffffff;
+    color: #000000;
+  }
+}
