@@ -254,22 +254,18 @@ h4, .h4 {
 header {
   position: absolute;
   top: 76px;
-  left: calc((100% - 1200px)/2); }
-
-header.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
+  left: calc((100% - 1200px)/2);
   width: 100%;
-  background-color: #1d191d;
-  z-index: 1;
-  padding: 20px 0; }
+  max-width: 1200px; }
 
 .header_cont {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap; }
+
+.header_logo {
+  margin-right: 50px; }
 
 .header_right {
   display: flex;
@@ -279,7 +275,6 @@ header.fixed {
     margin-right: 80px; }
     .header_right .header_phone a {
       font-size: 30px;
-      line-height: 36px;
       font-weight: 300;
       letter-spacing: -0.02em;
       color: #ffffff; }
@@ -306,7 +301,6 @@ a.link_hover_all:hover {
 
 .main_banner {
   height: 100vh;
-  height: 768px;
   background: url("../img/top_bg.png") 50% 50% no-repeat;
   background-size: cover;
   display: flex;
@@ -354,6 +348,7 @@ a.link_hover_all:hover {
     .about .about_left ul li {
       height: 104px;
       height: 104px;
+      padding-right: 10px;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -417,7 +412,7 @@ a.link_hover_all:hover {
     justify-content: space-between;
     flex-wrap: wrap; }
     .help ul li {
-      width: 33.3%;
+      width: 32%;
       max-width: 305px;
       margin-bottom: 70px;
       text-align: center; }
@@ -437,6 +432,7 @@ a.link_hover_all:hover {
   .services > ul > li {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding-top: 50px; }
     .services > ul > li .services_left {
       width: 100px;
@@ -461,7 +457,8 @@ a.link_hover_all:hover {
           position: absolute;
           top: -3px; }
     .services > ul > li .services_text {
-      margin-top: 20px; }
+      margin-top: 20px;
+      max-width: 400px; }
       .services > ul > li .services_text ul {
         max-width: 550px; }
         .services > ul > li .services_text ul li:not(:last-child) {
@@ -662,7 +659,16 @@ a.link_hover_all:hover {
   font-size: 17px;
   line-height: 28px;
   font-weight: 300;
-  color: #000000; }
+  color: #000000;
+  border: 1px solid #ffffff;
+  transition: all 0.3s ease; }
+  .feedback_form_param input:focus, .feedback_form_param textarea:focus {
+    border: 1px solid #ffde00; }
+  .feedback_form_param input:hover, .feedback_form_param textarea:hover {
+    border: 1px solid #ffde00; }
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {
+  border: 1px solid #ffde00; }
 
 footer .footer_content {
   display: flex;
@@ -680,26 +686,33 @@ footer .footer_content {
   z-index: 5; }
 
 .modal_div .modal_close {
-  width: 21px;
-  height: 21px;
+  width: 38px;
+  height: 38px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 30px;
+  right: 30px;
   cursor: pointer;
-  display: block; }
+  display: block;
+  background-image: url("../img/close.png");
+  transition: all 0.3s ease; }
+  .modal_div .modal_close:hover {
+    opacity: 0.5; }
 
 #overlay {
   z-index: 3;
   position: fixed;
-  background-color: #000;
-  opacity: 0.8;
-  -moz-opacity: 0.8;
-  filter: alpha(opacity=80);
+  background-color: #fff;
+  opacity: 0.6;
+  -moz-opacity: 0.6;
+  filter: alpha(opacity=60);
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   cursor: pointer;
   display: none; }
+
+.modal_div .main_feedback {
+  padding: 35px 80px; }
 
 /*# sourceMappingURL=style.css.map */

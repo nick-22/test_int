@@ -113,18 +113,23 @@ header {
     position: absolute;
     top: 76px;
     left: calc((100% - 1200px)/2);
-}
-header.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    background-color: #1d191d;
-    z-index: 1;
-    padding: 20px 0;
+    max-width: 1200px;
 }
+// header.fixed {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     background-color: #1d191d;
+//     z-index: 1;
+//     padding: 20px 0;
+// }
 .header_cont {
     @include flex (space-between, center, nowrap)
+}
+.header_logo {
+    margin-right: 50px;
 }
 .header_right {
     display: flex;
@@ -134,7 +139,6 @@ header.fixed {
         margin-right: 80px;
         a {
         font-size: 30px;
-        line-height: 36px;
         font-weight: 300;
         letter-spacing: -0.02em;
         color: #ffffff;
@@ -169,7 +173,7 @@ a.link_hover_all:hover {
 }
 .main_banner {
     height: 100vh;
-    height: 768px;
+    // height: 768px;
     background: url( $url_img + 'top_bg.png') 50% 50% no-repeat;
     background-size: cover;
     display: flex;
@@ -219,9 +223,11 @@ a.link_hover_all:hover {
         width: calc(100% - 531px);
         margin-top: 21px;
         ul {
+
             li {
                 height: 104px;
                 height: 104px;
+                padding-right: 10px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -301,7 +307,7 @@ a.link_hover_all:hover {
         justify-content: space-between;
         flex-wrap: wrap;
         li {
-            width: 33.3%;
+            width: 32%;
             max-width: 305px;
             margin-bottom: 70px;
             text-align: center;
@@ -329,6 +335,7 @@ a.link_hover_all:hover {
         > li {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
             padding-top: 50px;
             .services_left {
                 width: 100px;
@@ -357,6 +364,7 @@ a.link_hover_all:hover {
             }
             .services_text {
                 margin-top: 20px;
+                max-width: 400px;
                 ul {
                     max-width: 550px;
                     li {
@@ -604,6 +612,17 @@ a.link_hover_all:hover {
     line-height: 28px;
     font-weight: 300;
     color: #000000;
+    border: 1px solid #ffffff;
+    transition: $tr_all;
+    &:focus {
+        border: 1px solid #ffde00;
+    }
+    &:hover {
+        border: 1px solid #ffde00;
+    }
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {
+    border: 1px solid #ffde00;
 }
 footer {
     .footer_content {
@@ -630,25 +649,33 @@ footer {
 	z-index: 5;
 }
 .modal_div .modal_close {
-	width: 21px;
-	height: 21px;
+	width: 38px;
+	height: 38px;
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	top: 30px;
+	right: 30px;
 	cursor: pointer;
 	display: block;
+    background-image: url( $url_img + 'close.png');
+    transition: $tr_all;
+    &:hover {
+        opacity: 0.5;
+    }
 }
 #overlay {
 	z-index: 3;
 	position: fixed;
-	background-color: #000;
-	opacity: 0.8;
-	-moz-opacity: 0.8;
-	filter:alpha(opacity=80);
+	background-color: #fff;
+	opacity: 0.6;
+	-moz-opacity: 0.6;
+	filter:alpha(opacity=60);
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
 	cursor: pointer;
 	display: none;
+}
+.modal_div .main_feedback {
+    padding: 35px 80px;
 }

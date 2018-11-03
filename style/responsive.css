@@ -1,0 +1,307 @@
+/********************* all *******************/
+@media (max-width: 1199px) and (min-width: 320px) {
+
+	.container {
+		width: 100%;
+		min-width: 100%;
+		padding: 0 2%;
+	}
+    header {
+        padding: 0 2%;
+        left: auto;
+        top: 20px;
+    }
+    .main_banner_title {
+        font-size: 36px;
+        line-height: 1;
+        text-align: center;
+    }
+    .about {
+        background: #524199;
+        margin-top: -50px;
+    }
+    .about .about_left ul li p {
+        line-height: 1.2;
+    }
+    .about .about_left ul li p:first-child {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+@media (max-width: 1024px) and (min-width: 320px) {
+
+}
+
+@media (max-width: 1023px) and (min-width: 320px) {
+
+    .about_lists {
+        position: relative;
+    }
+    .about .about_left {
+        width: 100%;
+        margin-top: 0;
+    }
+    .about .about_left ul li {
+        padding-bottom: 40px;
+    }
+    .about .about_right {
+        float: right;
+        width: auto;
+        height: auto;
+        background-image: none;
+        margin-top: 0;
+        position: absolute;
+        right: 0;
+    }
+    .about .about_right ol li {
+        border-bottom: 1px solid rgba(246, 246, 246, 0.2);
+        text-align: right;
+        min-height: 40px;
+        margin-top: 64px;
+        padding-top: 3px;
+        padding-left: 40px;
+        padding-right: 20px;
+        background: red;
+    }
+    .about .about_right ol li {
+        border-bottom: 1px solid rgba(246, 246, 246, 0.2);
+    }
+    .about .about_right ol li:before {
+        top: auto;
+        left: 0 !important;
+		background-color: transparent;
+    }
+	.about .about_right ol li:first-child {
+		background: #ebb845;
+		border-bottom: 1px solid #ebb845;
+	}
+	.about .about_right ol li:nth-child(2) {
+		background: #e77434;
+		border-bottom: 1px solid #e77434;
+	}
+	.about .about_right ol li:nth-child(3) {
+		background: #e73533;
+		border-bottom: 1px solid #e73533;
+	}
+	.about .about_right ol li:nth-child(4) {
+		background: #b63256;
+		border-bottom: 1px solid #b63256;
+	}
+	.about .about_right ol li:last-child {
+		background: #743286;
+		border-bottom: 1px solid #743286;
+	}
+	.about .about_right ol li:after {
+		bottom: 0;
+		content: "";
+		width: 0;
+		position: absolute;
+		height: 0;
+		right: 100%;
+		top: 0;
+		border-style: solid;
+		border-width: 0 0 40px 40px;
+		border-color: transparent transparent red transparent;
+	}
+	.about .about_right ol li:first-child:after  {
+		border-color: transparent transparent #ebb845 transparent;
+	}
+	.about .about_right ol li:nth-child(2):after  {
+		border-color: transparent transparent #e77434 transparent;
+	}
+	.about .about_right ol li:nth-child(3):after  {
+		border-color: transparent transparent #e73533 transparent;
+	}
+	.about .about_right ol li:nth-child(4):after  {
+		border-color: transparent transparent #b63256 transparent;
+	}
+	.about .about_right ol li:last-child:after   {
+		border-color: transparent transparent #743286 transparent;
+	}
+	.services > ul > li .services_text {
+		max-width: none;
+		width: 100%;
+		order: -1;
+	    margin-bottom: 30px;
+	}
+
+}
+
+
+@media (max-width: 960px) and (min-width: 320px) {
+
+}
+
+
+@media (max-width: 768px) and (min-width: 320px) {
+
+	h1, .h1, .user_text .h1 {
+	    font-size: 50px;
+	    line-height: 1.5;
+	}
+	h2, .h2 {
+	    font-size: 40px;
+	    line-height: 1.5;
+	}
+
+    .header_right {
+        flex-direction: column;
+    }
+    .phone.header_phone {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+    .header_right .header_phone a {
+        font-size: 20px;
+    }
+    .header_right .header_feedback a {
+        display: inline-block;
+        width: 200px;
+        padding: 6px 0;
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 767px) and (min-width: 320px) {
+
+	.help ul li {
+		width: 49%;
+	}
+
+}
+
+@media (max-width: 721px) and (min-width: 320px) {
+
+
+}
+
+@media (max-width: 640px) and (min-width: 320px) {
+
+	.main_banner_title {
+	    font-size: 28px;
+	}
+	.about {
+		    padding: 50px 30px 30px;
+	}
+	.about .about_left ul li {
+		height: 130px;
+	}
+	.about .about_right ol li {
+		margin-top: 90px;
+	}
+	.help {
+	    padding: 0 15px;
+	}
+	.services {
+	    padding: 70px 30px;
+	}
+	.help h2 {
+	    margin-bottom: 30px;
+	}
+	.services > ul > li:first-child {
+		padding-top: 15px;
+	}
+
+}
+
+
+
+
+/********************* sred *******************/
+
+@media (max-width: 600px) and (min-width: 320px) {
+
+
+
+}
+
+
+
+
+
+
+/*min*/
+@media (max-width: 480px) and (min-width: 320px) {
+
+	h1, .h1, .user_text .h1 {
+		font-size: 30px;
+		line-height: 1.2;
+	}
+	h2, .h2 {
+		font-size: 25px;
+		line-height: 1.2;
+	}
+
+	/* .main_banner {
+	    height: 250px;
+	    padding-top: 95px;
+	}
+	.to_bottom {
+	    margin-top: 15px;
+	}
+	.about {
+	    margin-top: 0px;
+	} */
+
+	.services > ul > li .services_left {
+	    margin: 0 auto;
+	}
+	.services > ul > li .services_right {
+		width: 100%;
+		margin-top: 30px;
+	}
+	.services > ul > li .services_right a {
+		margin: 0 auto;
+	}
+
+
+}
+
+@media (max-width: 451px) and (min-width: 320px) {
+
+
+}
+
+
+
+/*min*/
+@media (max-width: 420px) and (min-width: 320px) {
+
+	.main_banner_title {
+	    font-size: 22px;
+	}
+	.about {
+			padding: 50px 20px 30px;
+	}
+
+	.about .about_left ul li:not(:last-child) {
+		border-bottom: none;
+	}
+
+	.about .about_left ul li {
+	    height: 200px;
+	}
+	.about .about_right ol li {
+	    margin-top: 140px;
+	    text-align: center;
+	    height: 60px;
+	}
+	.about .about_right ol li:after {
+		display: none;
+	}
+
+}
+
+@media (max-width: 380px) and (min-width: 320px) {
+
+
+}
+
+@media (max-width: 320px) and (min-width: 320px) {
+
+}
+}

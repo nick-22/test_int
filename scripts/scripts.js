@@ -12,7 +12,12 @@ $(document).ready(function() {
 
     //текст по дуге
 
-    $('.about_right ol li').circleType({radius: 800});
+    $(function(){
+        if ($(window).width() > 1023){
+            $('.about_right ol li').circleType({radius: 800});
+        }
+    });
+
 
     //текст по дуге
 
@@ -21,13 +26,16 @@ $(document).ready(function() {
     // плаавное появление элементов
 
     // $(window).scroll(function(){
-    // 		if($(window).scrollTop()>420){
-    // 			$('.about_left li:last-child').fadeIn(900)
+    // 		if($(window).scrollTop()>1220){
+    // 			$('.help>ul>li').fadeIn(1000)
     // 		}else{
-    // 			$('.about_left li:last-child').fadeOut(700)
+    // 			$('.help>ul>li').fadeOut(1000)
     // 		}
     // 	});
     //по умолчанию скрыть
+
+
+
 
 
     //Фикс меню
