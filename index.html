@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Marx</title>
     <link rel="stylesheet" type="text/css" href="style/style.css">
-
+    <link rel="stylesheet" type="text/css" href="style/responsive.css">
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
 </head>
 <body>
     <div class="wrapper">
@@ -17,11 +18,11 @@
                         <img src="img/logo.png" alt="logo">
                     </div>
                     <div class="header_right">
-                        <div class="header_phone">
-                            <a href="tel:+74952680256">+ 7 (495) 268-02-56</a>
+                        <div class="phone header_phone">
+                            <a href="tel:+74952680256" class="link_hover_all">+ 7 (495) 268-02-56</a>
                         </div>
                         <div class="header_feedback">
-                            <a class="white_btn all_btn" data-src="#popup" data-fancybox="">Начать работу!</a>
+                            <a href=".modal_class" class="white_btn all_btn open_modal">Начать работу!</a>
                         </div>
                     </div>
                 </div>
@@ -220,8 +221,8 @@
                                 <img src="img/case_3.png" alt="">
                             </div>
                             <div class="shop_wrap">
-                                <div class="case_title">Amorem</div>
-                                <div class="case_shop">интернет-магазин украшений</div>
+                                <div class="case_title">Обоиленд</div>
+                                <div class="case_shop">интернет-магазин обоев</div>
                             </div>
                             <div class="val_wrap">
                                 <div class="case_val">до 200%
@@ -239,18 +240,77 @@
                     </ul>
                 </section>
                 <section class="main_feedback">
-
+                    <h2>Начните работать с нами!</h2>
+                    <form method="POST" enctype="" action="" class="">
+                        <div class="feedback_form_param">
+                            <input type="text" name="" value="" placeholder="Ваше имя *">
+                        </div>
+                        <div class="feedback_form_param">
+                            <input type="text" name="" value="" placeholder="Бюджет">
+                        </div>
+                        <div class="feedback_form_param">
+                            <input type="tel" name="" value="" placeholder="Контактный телефон *">
+                        </div>
+                        <div class="feedback_form_param">
+                            <input type="mail" name="" value="" placeholder="Email">
+                        </div>
+                        <div class="feedback_form_param">
+                            <textarea name="" cols="66" rows="10" placeholder="Детали проекта *"></textarea>
+                        </div>
+                        <div class="feedback_button">
+                            <input type="submit" value="Отправить" class="all_btn">
+                        </div>
+                    </form>
                 </section>
             </div>
         </main>
         <footer>
+            <div class="container">
+                <div class="footer_content">
+                    <div class="footer_left">
+                        <div class="phone footer_phone">
+                            <a href="tel:+74952680256" class="link_hover_all">+7 495 268-02-56</a>
+                        </div>
+                        <div class="mail footer_mail">
+                            <a href="mailto:mail@marks.agency" class="link_hover_all">mail@marks.agency</a>
+                        </div>
+                    </div>
+                    <div class="div footer_right">
+                        <div class="address">
+                            115230, Москва, Хлебозаводский проезд, д.7, стр. 9
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Модальные окна -->
-            <div id="mes" class="hidden-content mod_3">
-                <insert name="show_form" module="feedback" site_id="166" template="modal_call">
+            <div class="modal_div modal_class">
+                <!-- <span class="modal_close">X</span> -->
+                <i class="fa fa-times modal_close" aria-hidden="true"></i>
+                <div class="main_feedback">
+                    <h2>Начните работать с нами!</h2>
+                    <form method="POST" enctype="" action="" class="">
+                        <div class="feedback_form_param">
+                            <input type="text" name="" value="" placeholder="Ваше имя *">
+                        </div>
+                        <div class="feedback_form_param">
+                            <input type="text" name="" value="" placeholder="Бюджет">
+                        </div>
+                        <div class="feedback_form_param">
+                            <input type="tel" name="" value="" placeholder="Контактный телефон *">
+                        </div>
+                        <div class="feedback_form_param">
+                            <input type="mail" name="" value="" placeholder="Email">
+                        </div>
+                        <div class="feedback_form_param">
+                            <textarea name="" cols="66" rows="10" placeholder="Детали проекта *"></textarea>
+                        </div>
+                        <div class="feedback_button">
+                            <input type="submit" value="Отправить" class="all_btn">
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div id="mes2" class="hidden-content mod_3">
-                <insert name="show_form" module="feedback" site_id="195" template="record">
-            </div>
+            <div id="overlay"></div>
             <!-- Модальные окна - конец -->
 
             <script type="text/javascript" src="scripts/jquery.min.js" charset="UTF-8"></script>

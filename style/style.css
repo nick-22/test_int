@@ -3,8 +3,8 @@
 /* Шрифты */
 @font-face {
   font-family: "FontAwesome";
-  src: url("fonts/FontAwesome/FontAwesome.eot");
-  src: url("fonts/FontAwesome/FontAwesome.eot?#iefix") format("embedded-opentype"), url("fonts/FontAwesome/FontAwesome.woff") format("woff"), url("fonts/FontAwesome/FontAwesome.ttf") format("truetype");
+  src: url("../fonts/FontAwesome/FontAwesome.eot");
+  src: url("../fonts/FontAwesome/FontAwesome.eot?#iefix") format("embedded-opentype"), url("../fonts/FontAwesome/FontAwesome.woff") format("woff"), url("../fonts/FontAwesome/FontAwesome.ttf") format("truetype");
   font-style: normal;
   font-weight: normal; }
 @font-face {
@@ -98,6 +98,88 @@ table {
   content: '';
   clear: both; }
 
+:focus::-webkit-input-placeholder {
+  color: transparent; }
+
+:focus::-moz-placeholder {
+  color: transparent; }
+
+:focus:-moz-placeholder {
+  color: transparent; }
+
+:focus:-ms-input-placeholder {
+  color: transparent; }
+
+input::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease; }
+
+input::-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease; }
+
+input:-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease; }
+
+input:-ms-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease; }
+
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease; }
+
+input:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease; }
+
+input:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease; }
+
+input:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease; }
+
+textarea::-webkit-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease; }
+
+textarea::-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease; }
+
+textarea:-moz-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease; }
+
+textarea:-ms-input-placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease; }
+
+textarea:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease; }
+
+textarea:focus::-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease; }
+
+textarea:focus:-moz-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease; }
+
+textarea:focus:-ms-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease; }
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url("fonts/FontAwesome/FontAwesome.eot");
+  src: url("fonts/FontAwesome/FontAwesome.eot?#iefix") format("embedded-opentype"), url("fonts/FontAwesome/FontAwesome.woff") format("woff"), url("fonts/FontAwesome/FontAwesome.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
 /*Базовые стили*/
 body {
   background: #281922;
@@ -168,22 +250,20 @@ h4, .h4 {
   margin-bottom: 25px;
   text-transform: uppercase; }
 
-[id*=mes] {
-  display: none;
-  width: 400px;
-  min-height: 110px; }
-
-#modal_form {
-  display: none; }
-
-.left_menu_btn {
-  display: none; }
-
 /*Основные стили*/
 header {
   position: absolute;
   top: 76px;
   left: calc((100% - 1200px)/2); }
+
+header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1d191d;
+  z-index: 1;
+  padding: 20px 0; }
 
 .header_cont {
   display: flex;
@@ -202,14 +282,14 @@ header {
       line-height: 36px;
       font-weight: 300;
       letter-spacing: -0.02em;
-      color: #ffffff;
-      transition: all 0.3s ease; }
-      .header_right .header_phone a:hover {
-        color: #e73d34; }
+      color: #ffffff; }
   .header_right .header_feedback a {
     display: inline-block;
     width: 270px;
     transition: all 0.3s ease; }
+
+a.link_hover_all:hover {
+  border-bottom: 1px solid #ffffff; }
 
 .white_btn {
   text-align: center;
@@ -221,7 +301,7 @@ header {
   border-radius: 30px; }
 
 .all_btn:hover {
-  background: #e73d34;
+  background-color: #e73d34 !important;
   color: #fff; }
 
 .main_banner {
@@ -244,6 +324,20 @@ header {
 
 .to_bottom {
   margin-top: 40px; }
+  .to_bottom a {
+    position: relative;
+    transition: all 0.3s ease; }
+    .to_bottom a:after {
+      font-family: FontAwesome;
+      content: "\f107";
+      position: absolute;
+      bottom: -30px;
+      width: 8px;
+      left: 0;
+      right: 0;
+      margin: auto; }
+    .to_bottom a:hover {
+      color: #e73d34; }
 
 .about {
   background: #524199;
@@ -314,27 +408,30 @@ header {
     content: "";
     clear: both; }
 
-.help h2 {
-  margin-bottom: 60px; }
-.help ul {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; }
-  .help ul li {
-    width: 33.3%;
-    max-width: 305px;
-    margin-bottom: 70px;
-    text-align: center; }
-    .help ul li p:first-child {
-      margin-bottom: 20px; }
-    .help ul li p:last-child {
-      font-size: 17px;
-      line-height: 28px;
-      font-weight: 300; }
+.help {
+  padding: 0 40px; }
+  .help h2 {
+    margin-bottom: 60px; }
+  .help ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    .help ul li {
+      width: 33.3%;
+      max-width: 305px;
+      margin-bottom: 70px;
+      text-align: center; }
+      .help ul li p:first-child {
+        margin-bottom: 20px; }
+      .help ul li p:last-child {
+        font-size: 17px;
+        line-height: 28px;
+        font-weight: 300; }
 
 .services {
   background: #7f222e;
-  padding: 70px 85px; }
+  padding: 70px 85px;
+  margin-bottom: 90px; }
   .services h2 {
     margin-bottom: 0; }
   .services > ul > li {
@@ -411,10 +508,16 @@ header {
   background-image: url("../img/serv_3.png"); }
 
 .cases {
-  padding: 70px 0;
-  margin-bottom: 70px; }
+  padding: 0px 90px 70px;
+  margin-bottom: 70px;
+  border: 3px solid #382631;
+  text-align: center; }
   .cases h2 {
-    margin-bottom: 45px; }
+    margin-bottom: 45px;
+    background: #281922;
+    padding: 0 30px;
+    display: inline-block;
+    margin-top: -36px; }
   .cases ul {
     display: flex;
     justify-content: space-between;
@@ -507,7 +610,96 @@ header {
 
 .main_feedback {
   background: #1d191d;
-  padding: 70px 0;
-  margin-bottom: 45px; }
+  padding: 70px 80px;
+  margin-bottom: 45px;
+  background-image: url("../img/feedback_bg.png"); }
+  .main_feedback h2 {
+    margin-bottom: 35px; }
+  .main_feedback .feedback_form_param {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px; }
+    .main_feedback .feedback_form_param:nth-child(odd) {
+      float: left;
+      margin-right: 40px; }
+    .main_feedback .feedback_form_param:nth-child(even) {
+      float: right; }
+    .main_feedback .feedback_form_param:nth-last-child(2) {
+      float: none;
+      max-width: none;
+      clear: both; }
+    .main_feedback .feedback_form_param input {
+      width: 100%;
+      height: 50px;
+      background-color: #ffffff;
+      padding-left: 15px; }
+    .main_feedback .feedback_form_param textarea {
+      width: 100%;
+      height: 200px;
+      background-color: #ffffff;
+      padding-left: 15px;
+      padding-top: 10px;
+      font-size: 19px; }
+  .main_feedback .feedback_button input {
+    width: 270px;
+    height: 60px;
+    background-color: #892531;
+    border: none;
+    font-size: 17px;
+    line-height: 36px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    transition: all 0.3s ease; }
+  .main_feedback:after {
+    display: block;
+    content: "";
+    clear: both; }
+
+.feedback_form_param input, .feedback_form_param textarea {
+  font-family: Roboto;
+  font-size: 17px;
+  line-height: 28px;
+  font-weight: 300;
+  color: #000000; }
+
+footer .footer_content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 45px 50px; }
+
+.modal_div {
+  width: 100%;
+  max-width: 1200px;
+  position: fixed;
+  top: 15%;
+  left: calc((100% - 1200px)/2);
+  display: none;
+  opacity: 0;
+  z-index: 5; }
+
+.modal_div .modal_close {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  display: block; }
+
+#overlay {
+  z-index: 3;
+  position: fixed;
+  background-color: #000;
+  opacity: 0.8;
+  -moz-opacity: 0.8;
+  filter: alpha(opacity=80);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

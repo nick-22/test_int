@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,700i&subset=cyrillic');
-
-/* Шрифты */
+@import 'fonts';
+@import 'reset';
+@import 'placeholder';
 
 @font-face {
     font-family: "FontAwesome";
@@ -9,108 +9,6 @@
     font-style: normal;
     font-weight: normal;
 }
-
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto/RobotoThin/RobotoThin.eot");
-  src: url("../fonts/Roboto/RobotoThin/RobotoThin.eot?#iefix")format("embedded-opentype"), url("../fonts/Roboto/RobotoThin/RobotoThin.woff") format("woff"), url("../fonts/Roboto/RobotoThin/RobotoThin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto/RobotoLight/RobotoLight.eot");
-  src: url("../fonts/Roboto/RobotoLight/RobotoLight.eot?#iefix")format("embedded-opentype"), url("../fonts/Roboto/RobotoLight/RobotoLight.woff") format("woff"), url("../fonts/Roboto/RobotoLight/RobotoLight.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto/RobotoRegular/RobotoRegular.eot");
-  src: url("../fonts/Roboto/RobotoRegular/RobotoRegular.eot?#iefix")format("embedded-opentype"), url("../fonts/Roboto/RobotoRegular/RobotoRegular.woff") format("woff"), url("../fonts/Roboto/RobotoRegular/RobotoRegular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roboto";
-  src: url("../fonts/Roboto/RobotoBold/RobotoBold.eot");
-  src: url("../fonts/Roboto/RobotoBold/RobotoBold.eot?#iefix")format("embedded-opentype"), url("../fonts/Roboto/RobotoBold/RobotoBold.woff") format("woff"), url("../fonts/Roboto/RobotoBold/RobotoBold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Raleway";
-  src: url("../fonts/Raleway/RalewayMedium/RalewayMedium.eot");
-  src: url("../fonts/Raleway/RalewayMedium/RalewayMedium.eot?#iefix")format("embedded-opentype"), url("../fonts/Raleway/RalewayMedium/RalewayMedium.woff") format("woff"), url("../fonts/Raleway/RalewayMedium/RalewayMedium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Raleway";
-  src: url("../fonts/Raleway/RalewayBold/RalewayBold.eot");
-  src: url("../fonts/Raleway/RalewayBold/RalewayBold.eot?#iefix")format("embedded-opentype"), url("../fonts/Raleway/RalewayBold/RalewayBold.woff") format("woff"), url("../fonts/Raleway/RalewayBold/RalewayBold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Raleway";
-  src: url("../fonts/Raleway/RalewayBlack/RalewayBlack.eot");
-  src: url("../fonts/Raleway/RalewayBlack/RalewayBlack.eot?#iefix")format("embedded-opentype"), url("../fonts/Raleway/RalewayBlack/RalewayBlack.woff") format("woff"), url("../fonts/Raleway/RalewayBlack/RalewayBlack.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-}
-
-/* сбросы/нормализаторы */
-
-html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	outline: 0 !important;
-}
-* {
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
-/* * {
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-} */
-input[type="submit"], input[type="button"] {
-	-webkit-appearance: none;
-	cursor: pointer;
-}
-input {
-	outline: none;
-}
-ol, ul {
-	list-style: none;
-}
-a, a:hover {
-	text-decoration: none;
-	color: #ffffff;
-}
-html {
-    height: 100%;
-}
-a,input {
-	cursor:pointer;
-}
-div,ul,li,a,span,input {
-	-webkit-box-sizing:border-box;
-	        box-sizing:border-box;
-}
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-.container:after {
-	display: block;
-	content: '';
-	clear: both;
-}
-
 /*Базовые стили*/
 
 $url_img: '../img/';
@@ -209,23 +107,21 @@ h4, .h4 {
 p {
 
 }
-[id*=mes] {
-    display: none;
-    width: 400px;
-    min-height: 110px;
-}
-#modal_form {
-    display: none;
-}
-.left_menu_btn {
-    display: none;
-}
 
 /*Основные стили*/
 header {
     position: absolute;
     top: 76px;
     left: calc((100% - 1200px)/2);
+}
+header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1d191d;
+    z-index: 1;
+    padding: 20px 0;
 }
 .header_cont {
     @include flex (space-between, center, nowrap)
@@ -242,8 +138,6 @@ header {
         font-weight: 300;
         letter-spacing: -0.02em;
         color: #ffffff;
-        transition: $tr_all;
-        &:hover {color: #e73d34;}
         }
     }
     .header_feedback {
@@ -255,6 +149,11 @@ header {
         }
     }
 }
+a.link_hover_all {
+}
+a.link_hover_all:hover {
+    border-bottom: 1px solid #ffffff;
+}
 .white_btn {
     text-align: center;
     font-size: 24px;
@@ -265,7 +164,7 @@ header {
     border-radius: 30px;
 }
 .all_btn:hover {
-    background: #e73d34;
+    background-color: #e73d34 !important;
     color: #fff;
 }
 .main_banner {
@@ -288,6 +187,23 @@ header {
 }
 .to_bottom {
     margin-top: 40px;
+    a {
+        position: relative;
+        transition: $tr_all;
+        &:after {
+            font-family: FontAwesome;
+            content: "\f107";
+            position: absolute;
+            bottom: -30px;
+            width: 8px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        &:hover {
+            color: #e73d34;
+        }
+    }
 }
 .about {
     background: #524199;
@@ -376,6 +292,7 @@ header {
     }
 }
 .help {
+    padding: 0 40px;
     h2 {
         margin-bottom: 60px;
     }
@@ -403,6 +320,7 @@ header {
 .services {
     background: #7f222e;
     padding: 70px 85px;
+    margin-bottom: 90px;
     h2 {
         margin-bottom: 0;
     }
@@ -497,10 +415,16 @@ header {
 }
 
 .cases {
-    padding: 70px 0;
+    padding: 0px 90px 70px;
     margin-bottom: 70px;
+    border: 3px solid #382631;
+    text-align: center;
     h2 {
         margin-bottom: 45px;
+        background: #281922;
+        padding: 0 30px;
+        display: inline-block;
+        margin-top: -36px;
     }
     ul {
         display: flex;
@@ -616,6 +540,115 @@ header {
 }
 .main_feedback {
     background: #1d191d;
-    padding: 70px 0;
+    padding: 70px 80px;
     margin-bottom: 45px;
+    background-image: url( $url_img + 'feedback_bg.png');
+    h2 {
+        margin-bottom: 35px;
+    }
+    .feedback_form_param {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 30px;
+        &:nth-child(odd) {
+            float: left;
+            margin-right: 40px;
+        }
+        &:nth-child(even) {
+            float: right;
+        }
+        &:nth-last-child(2) {
+            float: none;
+            max-width: none;
+            clear: both;
+        }
+        input {
+            width: 100%;
+            height: 50px;
+            background-color: #ffffff;
+            padding-left: 15px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            background-color: #ffffff;
+            padding-left: 15px;
+            padding-top: 10px;
+            font-size: 19px;
+        }
+    }
+    .feedback_button {
+        input {
+            width: 270px;
+            height: 60px;
+            background-color: #892531;
+            border: none;
+            font-size: 17px;
+            line-height: 36px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            transition: $tr_all;
+        }
+    }
+    &:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+.feedback_form_param input, .feedback_form_param textarea {
+    font-family: Roboto;
+    font-size: 17px;
+    line-height: 28px;
+    font-weight: 300;
+    color: #000000;
+}
+footer {
+    .footer_content {
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+        padding: 0px 45px 50px;
+        .footer_left {
+
+        }
+        .footer_right {
+
+        }
+    }
+}
+.modal_div {
+    width: 100%;
+    max-width: 1200px;
+	position: fixed;
+	top: 15%;
+	left: calc((100% - 1200px)/2);
+	display: none;
+	opacity: 0;
+	z-index: 5;
+}
+.modal_div .modal_close {
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	display: block;
+}
+#overlay {
+	z-index: 3;
+	position: fixed;
+	background-color: #000;
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	filter:alpha(opacity=80);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	display: none;
 }
