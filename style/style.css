@@ -406,6 +406,7 @@ a.link_hover_all:hover {
     justify-content: space-between;
     flex-wrap: wrap; }
     .help ul li {
+      opasity: 0;
       width: 32%;
       max-width: 305px;
       margin-bottom: 70px;
@@ -610,7 +611,8 @@ a.link_hover_all:hover {
   .main_feedback .feedback_form_param {
     width: calc(50% - 15px);
     max-width: 500px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    position: relative; }
     .main_feedback .feedback_form_param:nth-child(odd) {
       float: left; }
     .main_feedback .feedback_form_param:nth-child(even) {
@@ -625,6 +627,8 @@ a.link_hover_all:hover {
       height: 50px;
       background-color: #ffffff;
       padding-left: 15px; }
+      .main_feedback .feedback_form_param input.error {
+        border: 1px solid red; }
     .main_feedback .feedback_form_param textarea {
       width: 100%;
       height: 200px;
@@ -632,6 +636,8 @@ a.link_hover_all:hover {
       padding-left: 15px;
       padding-top: 10px;
       font-size: 19px; }
+      .main_feedback .feedback_form_param textarea.error {
+        border: 1px solid red; }
   .main_feedback .feedback_button input {
     width: 270px;
     height: 60px;
@@ -711,5 +717,22 @@ footer .footer_content {
 
 .modal_div .main_feedback {
   padding: 35px 80px; }
+
+label#login-error {
+  position: absolute;
+  left: 0;
+  top: 100%; }
+
+input.error::-webkit-input-placeholder {
+  color: red; }
+
+input.error:-moz-placeholder {
+  color: red; }
+
+textarea.error::-webkit-input-placeholder {
+  color: red; }
+
+textarea.error:-moz-placeholder {
+  color: red; }
 
 /*# sourceMappingURL=style.css.map */

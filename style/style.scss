@@ -301,6 +301,7 @@ a.link_hover_all:hover {
         justify-content: space-between;
         flex-wrap: wrap;
         li {
+            opasity: 0;
             width: 32%;
             max-width: 305px;
             margin-bottom: 70px;
@@ -553,6 +554,7 @@ a.link_hover_all:hover {
         width: calc(50% - 15px);
         max-width: 500px;
         margin-bottom: 30px;
+        position: relative;
         &:nth-child(odd) {
             float: left;
         }
@@ -570,6 +572,9 @@ a.link_hover_all:hover {
             height: 50px;
             background-color: #ffffff;
             padding-left: 15px;
+            &.error {
+                border: 1px solid red;
+            }
         }
         textarea {
             width: 100%;
@@ -578,6 +583,9 @@ a.link_hover_all:hover {
             padding-left: 15px;
             padding-top: 10px;
             font-size: 19px;
+            &.error {
+                border: 1px solid red;
+            }
         }
     }
     .feedback_button {
@@ -674,3 +682,12 @@ footer {
 .modal_div .main_feedback {
     padding: 35px 80px;
 }
+label#login-error {
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+input.error::-webkit-input-placeholder {color: red;}
+input.error:-moz-placeholder {color: red;}
+textarea.error::-webkit-input-placeholder {color: red;}
+textarea.error:-moz-placeholder {color: red;}
