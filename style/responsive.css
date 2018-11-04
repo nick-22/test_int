@@ -127,6 +127,9 @@
 		order: -1;
 	    margin-bottom: 30px;
 	}
+	.cases {
+	    padding: 0px 15px 70px;
+	}
 
 }
 
@@ -168,16 +171,22 @@
 
 @media (max-width: 767px) and (min-width: 320px) {
 
+	.about {
+	    margin-top: 0;
+	}
 	.help ul li {
 		width: 49%;
+		margin-bottom: 30px;
+	}
+	.services > ul > li {
+	    padding-top: 0px;
+	}
+	.services > ul > li:not(:last-child) {
+	    padding-bottom: 30px;
 	}
 
 }
 
-@media (max-width: 721px) and (min-width: 320px) {
-
-
-}
 
 @media (max-width: 640px) and (min-width: 320px) {
 
@@ -205,26 +214,54 @@
 	.services > ul > li:first-child {
 		padding-top: 15px;
 	}
+	.cases {
+	    padding: 0px 15px 20px;
+	}
+	.cases ul li {
+	    width: 100%;
+		max-width: none;
+		grid-template-areas: "logo shop"
+		                     "logo shop"
+		                     "val val";
+		 margin-bottom: 40px;
+	}
+	.cases ul li .case_logo {
+		margin: 0;
+		justify-self: center;
+		margin-bottom:0;
+	}
+	.cases ul li .shop_wrap {
+	    margin-bottom: 00px;
+	    align-self: center;
+	    text-align: left;
+	}
+	.cases ul li .val_wrap {
+		margin-top: 15px;
+	}
+	.main_feedback {
+	    padding: 70px 30px;
+	}
+	.main_feedback .feedback_form_param {
+		width: 100%;
+		max-width: none;
+	}
+	footer .footer_content {
+		flex-wrap: wrap;
+	}
+	footer .footer_content .footer_left {
+	    margin-right: 0;
+	    display: flex;
+	    justify-content: space-between;
+	    width: 100%;
+	    margin-bottom: 15px;
+	}
+	.div.footer_right {
+	    text-align: center;
+	    width: 100%;
+	}
 
 }
 
-
-
-
-/********************* sred *******************/
-
-@media (max-width: 600px) and (min-width: 320px) {
-
-
-
-}
-
-
-
-
-
-
-/*min*/
 @media (max-width: 480px) and (min-width: 320px) {
 
 	h1, .h1, .user_text .h1 {
@@ -235,9 +272,14 @@
 		font-size: 25px;
 		line-height: 1.2;
 	}
+	.header_cont > div {
+	    width: 100%;
+	    text-align: center;
+	    margin-right: 0;
+	}
 
-	/* .main_banner {
-	    height: 250px;
+	.main_banner {
+	    /* height: 250px; */
 	    padding-top: 95px;
 	}
 	.to_bottom {
@@ -245,7 +287,7 @@
 	}
 	.about {
 	    margin-top: 0px;
-	} */
+	}
 
 	.services > ul > li .services_left {
 	    margin: 0 auto;
@@ -257,22 +299,18 @@
 	.services > ul > li .services_right a {
 		margin: 0 auto;
 	}
+	.main_feedback .feedback_button input {
+		width: 100%;
+	}
 
 
 }
 
-@media (max-width: 451px) and (min-width: 320px) {
-
-
-}
-
-
-
-/*min*/
 @media (max-width: 420px) and (min-width: 320px) {
 
 	.main_banner_title {
 	    font-size: 22px;
+		padding: 0 5px;
 	}
 	.about {
 			padding: 50px 20px 30px;
@@ -293,13 +331,17 @@
 	.about .about_right ol li:after {
 		display: none;
 	}
+	.cases ul li .case_logo	{
+		margin-right: 15px;
+		width: 115px;
+		height: 115px;
+	}
+	footer .footer_content {
+	    padding: 0px 0px 50px;
+	}
 
 }
 
-@media (max-width: 380px) and (min-width: 320px) {
-
-
-}
 
 @media (max-width: 320px) and (min-width: 320px) {
 

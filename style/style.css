@@ -174,12 +174,6 @@ textarea:focus:-ms-input-placeholder {
   opacity: 0;
   transition: opacity 0.3s ease; }
 
-@font-face {
-  font-family: "FontAwesome";
-  src: url("fonts/FontAwesome/FontAwesome.eot");
-  src: url("fonts/FontAwesome/FontAwesome.eot?#iefix") format("embedded-opentype"), url("fonts/FontAwesome/FontAwesome.woff") format("woff"), url("fonts/FontAwesome/FontAwesome.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal; }
 /*Базовые стили*/
 body {
   background: #281922;
@@ -262,7 +256,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap; }
+  flex-wrap: wrap; }
 
 .header_logo {
   margin-right: 50px; }
@@ -520,11 +514,12 @@ a.link_hover_all:hover {
     justify-content: space-between;
     flex-wrap: wrap; }
     .cases ul li {
-      width: 30%;
+      width: 33%;
       max-width: 270px;
       text-align: center;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: max-content;
       grid-template-areas: "logo logo" "shop shop" "val val"; }
       .cases ul li .case_logo {
         grid-area: logo;
@@ -613,15 +608,15 @@ a.link_hover_all:hover {
   .main_feedback h2 {
     margin-bottom: 35px; }
   .main_feedback .feedback_form_param {
-    width: 100%;
+    width: calc(50% - 15px);
     max-width: 500px;
     margin-bottom: 30px; }
     .main_feedback .feedback_form_param:nth-child(odd) {
-      float: left;
-      margin-right: 40px; }
+      float: left; }
     .main_feedback .feedback_form_param:nth-child(even) {
       float: right; }
     .main_feedback .feedback_form_param:nth-last-child(2) {
+      width: 100%;
       float: none;
       max-width: none;
       clear: both; }
@@ -674,6 +669,8 @@ footer .footer_content {
   display: flex;
   justify-content: space-between;
   padding: 0px 45px 50px; }
+  footer .footer_content .footer_left {
+    margin-right: 50px; }
 
 .modal_div {
   width: 100%;
