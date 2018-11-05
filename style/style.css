@@ -252,18 +252,47 @@ header {
   width: 100%;
   max-width: 1200px; }
 
+header.fixed {
+  position: fixed;
+  max-width: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1d191d;
+  z-index: 1;
+  padding: 20px 0;
+  padding-left: calc((100% - 1200px)/2);
+  padding-right: calc((100% - 1200px)/2); }
+
 .header_cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  flex-wrap: wrap; }
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap; }
 
 .header_logo {
   margin-right: 50px; }
+  .header_logo img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center; }
 
 .header_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   .header_right .header_phone {
     margin-right: 80px; }
@@ -275,6 +304,7 @@ header {
   .header_right .header_feedback a {
     display: inline-block;
     width: 270px;
+    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
 
 a.link_hover_all:hover {
@@ -297,9 +327,18 @@ a.link_hover_all:hover {
   height: 100vh;
   background: url("../img/top_bg.png") 50% 50% no-repeat;
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column; }
 
 .main_banner_title {
@@ -314,6 +353,7 @@ a.link_hover_all:hover {
   margin-top: 40px; }
   .to_bottom a {
     position: relative;
+    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
     .to_bottom a:after {
       font-family: FontAwesome;
@@ -343,8 +383,15 @@ a.link_hover_all:hover {
       height: 104px;
       height: 104px;
       padding-right: 10px;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center; }
       .about .about_left ul li p:first-child {
         font-size: 18px;
@@ -402,8 +449,13 @@ a.link_hover_all:hover {
   .help h2 {
     margin-bottom: 60px; }
   .help ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
     .help ul li {
       opasity: 0;
@@ -425,8 +477,13 @@ a.link_hover_all:hover {
   .services h2 {
     margin-bottom: 0; }
   .services > ul > li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     padding-top: 50px; }
     .services > ul > li .services_left {
@@ -488,6 +545,7 @@ a.link_hover_all:hover {
   border: 1.0px solid #e73d34;
   font-size: 18px;
   color: #ffffff;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease; }
 
 .services ul li:first-child .services_left {
@@ -511,8 +569,13 @@ a.link_hover_all:hover {
     display: inline-block;
     margin-top: -36px; }
   .cases ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
     .cases ul li {
       width: 33%;
@@ -520,6 +583,7 @@ a.link_hover_all:hover {
       text-align: center;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: -webkit-max-content;
       grid-template-rows: max-content;
       grid-template-areas: "logo logo" "shop shop" "val val"; }
       .cases ul li .case_logo {
@@ -530,13 +594,21 @@ a.link_hover_all:hover {
         border-radius: 50%;
         background: #fff;
         margin-bottom: 30px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center; }
         .cases ul li .case_logo img {
           max-width: 100%;
           height: auto;
+          -o-object-fit: cover;
           object-fit: cover;
+          -o-object-position: center;
           object-position: center; }
       .cases ul li .shop_wrap {
         grid-area: shop;
@@ -584,21 +656,25 @@ a.link_hover_all:hover {
 .tl {
   top: 8px;
   left: -5px;
+  -webkit-transform: rotate(60deg);
   transform: rotate(60deg); }
 
 .bl {
   bottom: 8px;
   left: -5px;
+  -webkit-transform: rotate(120deg);
   transform: rotate(120deg); }
 
 .tr {
   top: 8px;
   right: -5px;
+  -webkit-transform: rotate(120deg);
   transform: rotate(120deg); }
 
 .br {
   bottom: 8px;
   right: -5px;
+  -webkit-transform: rotate(240deg);
   transform: rotate(240deg); }
 
 .main_feedback {
@@ -649,6 +725,7 @@ a.link_hover_all:hover {
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #ffffff;
+    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
   .main_feedback:after {
     display: block;
@@ -662,6 +739,7 @@ a.link_hover_all:hover {
   font-weight: 300;
   color: #000000;
   border: 1px solid #ffffff;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease; }
   .feedback_form_param input:focus, .feedback_form_param textarea:focus {
     border: 1px solid #ffde00; }
@@ -672,7 +750,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, te
   border: 1px solid #ffde00; }
 
 footer .footer_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0px 45px 50px; }
   footer .footer_content .footer_left {
@@ -697,6 +779,8 @@ footer .footer_content {
   cursor: pointer;
   display: block;
   background-image: url("../img/close.png");
+  background-size: cover;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease; }
   .modal_div .modal_close:hover {
     opacity: 0.5; }

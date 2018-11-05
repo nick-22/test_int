@@ -2,12 +2,10 @@
 @import 'reset';
 @import 'placeholder';
 
-
 /*Базовые стили*/
 
 $url_img: '../img/';
 $tr_all: all 0.3s ease;
-
 
 @mixin center() {
     position: absolute;
@@ -18,16 +16,26 @@ $tr_all: all 0.3s ease;
     margin: auto;
 }
 @mixin flex ($jc, $ali, $fw) {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: $jc;
-    align-items: $ali;
-    flex-wrap: $fw;
+    -webkit-box-pack: $jc;
+        -ms-flex-pack: $jc;
+            justify-content: $jc;
+    -webkit-box-align: $ali;
+        -ms-flex-align: $ali;
+            align-items: $ali;
+    -ms-flex-wrap: $fw;
+        flex-wrap: $fw;
 }
 @mixin bg {
     background-position: 50% 50%;
     background-repeat: no-repeat;
 }
-
+@mixin fc {
+    object-fit: cover;
+    object-position: center;
+}
 
 body {
     background: #281922;
@@ -110,25 +118,38 @@ header {
     width: 100%;
     max-width: 1200px;
 }
-// header.fixed {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     background-color: #1d191d;
-//     z-index: 1;
-//     padding: 20px 0;
-// }
+header.fixed {
+    position: fixed;
+    max-width: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1d191d;
+    z-index: 1;
+    padding: 20px 0;
+    padding-left: calc((100% - 1200px)/2);
+    padding-right: calc((100% - 1200px)/2);
+}
 .header_cont {
-    @include flex (space-between, center, wrap)
+    @include flex (space-between, center, nowrap)
 }
 .header_logo {
     margin-right: 50px;
+    img {
+        display: block;
+        width: 100%;
+        @include fc;
+    }
 }
 .header_right {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     .header_phone {
         margin-right: 80px;
         a {
@@ -139,10 +160,10 @@ header {
         }
     }
     .header_feedback {
-
         a {
             display: inline-block;
             width: 270px;
+            -webkit-transition: $tr_all;
             transition: $tr_all;
         }
     }
@@ -170,10 +191,19 @@ a.link_hover_all:hover {
     // height: 768px;
     background: url( $url_img + 'top_bg.png') 50% 50% no-repeat;
     background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 .main_banner_title {
     font-size: 70px;
@@ -187,6 +217,7 @@ a.link_hover_all:hover {
     margin-top: 40px;
     a {
         position: relative;
+        -webkit-transition: $tr_all;
         transition: $tr_all;
         &:after {
             font-family: FontAwesome;
@@ -222,9 +253,16 @@ a.link_hover_all:hover {
                 height: 104px;
                 height: 104px;
                 padding-right: 10px;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
                 p:first-child {
                     font-size: 18px;
                     color: #ffffff;
@@ -297,9 +335,14 @@ a.link_hover_all:hover {
         margin-bottom: 60px;
     }
     ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         li {
             opasity: 0;
             width: 32%;
@@ -328,9 +371,14 @@ a.link_hover_all:hover {
     > ul {
 
         > li {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
             padding-top: 50px;
             .services_left {
                 width: 100px;
@@ -405,6 +453,7 @@ a.link_hover_all:hover {
     border: 1.0px solid #e73d34;
     font-size: 18px;
     color: #ffffff;
+    -webkit-transition: $tr_all;
     transition: $tr_all;
 }
 .services ul li:first-child .services_left {
@@ -430,15 +479,21 @@ a.link_hover_all:hover {
         margin-top: -36px;
     }
     ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         li {
             width: 33%;
             max-width: 270px;
             text-align: center;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: -webkit-max-content;
             grid-template-rows: max-content;
             grid-template-areas: "logo logo"
                                  "shop shop"
@@ -456,14 +511,22 @@ a.link_hover_all:hover {
                 border-radius: 50%;
                 background: #fff;
                 margin-bottom: 30px;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                justify-content: center;
-                align-items: center;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
                 img {
                     max-width: 100%;
                     height: auto;
-                    object-fit: cover;
-                    object-position: center;
+                    -o-object-fit: cover;
+                       object-fit: cover;
+                    -o-object-position: center;
+                       object-position: center;
                 }
             }
             .shop_wrap {
@@ -525,22 +588,26 @@ a.link_hover_all:hover {
 .tl {
     top: 8px;
     left: -5px;
-    transform: rotate(60deg);
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
 }
 .bl {
     bottom: 8px;
     left: -5px;
-    transform: rotate(120deg);
+    -webkit-transform: rotate(120deg);
+            transform: rotate(120deg);
 }
 .tr {
     top: 8px;
     right: -5px;
-    transform: rotate(120deg);
+    -webkit-transform: rotate(120deg);
+            transform: rotate(120deg);
 }
 .br {
     bottom: 8px;
     right: -5px;
-    transform: rotate(240deg);
+    -webkit-transform: rotate(240deg);
+            transform: rotate(240deg);
 }
 .main_feedback {
     background: #1d191d;
@@ -600,6 +667,7 @@ a.link_hover_all:hover {
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: #ffffff;
+            -webkit-transition: $tr_all;
             transition: $tr_all;
         }
     }
@@ -616,6 +684,7 @@ a.link_hover_all:hover {
     font-weight: 300;
     color: #000000;
     border: 1px solid #ffffff;
+    -webkit-transition: $tr_all;
     transition: $tr_all;
     &:focus {
         border: 1px solid #ffde00;
@@ -629,8 +698,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, te
 }
 footer {
     .footer_content {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         // align-items: center;
         padding: 0px 45px 50px;
         .footer_left {
@@ -660,6 +733,8 @@ footer {
 	cursor: pointer;
 	display: block;
     background-image: url( $url_img + 'close.png');
+    background-size: cover;
+    -webkit-transition: $tr_all;
     transition: $tr_all;
     &:hover {
         opacity: 0.5;

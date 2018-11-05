@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,19 +12,19 @@
 <body>
     <div class="wrapper">
         <header>
-                <div class="header_cont">
-                    <div class="header_logo">
-                        <img src="img/logo.png" alt="logo">
+            <div class="header_cont">
+                <div class="header_logo">
+                    <img src="img/logo.png" alt="logo">
+                </div>
+                <div class="header_right">
+                    <div class="phone header_phone">
+                        <a href="tel:+74952680256" class="link_hover_all">+ 7 (495) 268-02-56</a>
                     </div>
-                    <div class="header_right">
-                        <div class="phone header_phone">
-                            <a href="tel:+74952680256" class="link_hover_all">+ 7 (495) 268-02-56</a>
-                        </div>
-                        <div class="header_feedback">
-                            <a href=".modal_class" class="white_btn all_btn open_modal">Начать работу!</a>
-                        </div>
+                    <div class="header_feedback">
+                        <a href=".modal_class" class="white_btn all_btn open_modal">Начать работу!</a>
                     </div>
                 </div>
+            </div>
         </header>
         <main class="site_main">
             <div class="main_banner">
@@ -65,7 +65,7 @@
                         <div class="about_right">
                             <!-- <img src="img/about.png" alt="img"> -->
                             <ol>
-                                <li>Привлечение целевых посетителей</li>
+                                <li id="ff">Привлечение целевых посетителей</li>
                                 <li>Увеличение числа заявок</li>
                                 <li>Увеличение числа звонков</li>
                                 <li>Больше подтвержденных заявок</li>
@@ -239,18 +239,18 @@
                 </section>
                 <section class="main_feedback">
                     <h2>Начните работать с нами!</h2>
-                    <form method="POST" enctype="" action="" id="form">
+                    <form method="POST" id="form">
                         <div class="feedback_form_param">
-                            <input type="text" name="login" value="" placeholder="Ваше имя *">
+                            <input type="text" name="login" placeholder="Ваше имя *">
                         </div>
                         <div class="feedback_form_param">
-                            <input type="text" name="" value="" placeholder="Бюджет">
+                            <input type="text" name="budget" placeholder="Бюджет">
                         </div>
                         <div class="feedback_form_param">
-                            <input type="tel" name="tel" value="" placeholder="Контактный телефон *">
+                            <input type="tel" name="tel" placeholder="Контактный телефон *">
                         </div>
                         <div class="feedback_form_param">
-                            <input type="mail" name="mail" value="" placeholder="Email">
+                            <input type="email" name="mail" placeholder="Email">
                         </div>
                         <div class="feedback_form_param">
                             <textarea name="textarea" cols="66" rows="10" placeholder="Детали проекта *"></textarea>
@@ -280,6 +280,7 @@
                     </div>
                 </div>
             </div>
+            
             <!-- Модальные окна -->
             <div class="modal_div modal_class">
                 <span class="modal_close"></span>
@@ -287,18 +288,18 @@
                 <!-- <i class="fa fa-times modal_close" aria-hidden="true"></i> -->
                 <div class="main_feedback">
                     <h2>Начните работать с нами!</h2>
-                    <form method="POST" enctype="" action="" class="">
+                    <form method="POST" id="modal_form">
                         <div class="feedback_form_param">
-                            <input type="text" name="login" value="" placeholder="Ваше имя *">
+                            <input type="text" name="login" placeholder="Ваше имя *">
                         </div>
                         <div class="feedback_form_param">
-                            <input type="text" name="budget" value="" placeholder="Бюджет">
+                            <input type="text" name="budget" placeholder="Бюджет">
                         </div>
                         <div class="feedback_form_param">
-                            <input type="tel" name="tel" value="" id="tel" placeholder="Контактный телефон *">
+                            <input type="tel" name="tel" placeholder="Контактный телефон *">
                         </div>
                         <div class="feedback_form_param">
-                            <input type="mail" name="mail" value="" placeholder="Email">
+                            <input type="email" name="mail" placeholder="Email">
                         </div>
                         <div class="feedback_form_param">
                             <textarea name="textarea" cols="66" rows="10" placeholder="Детали проекта *"></textarea>
@@ -312,12 +313,13 @@
             <div id="overlay"></div>
             <!-- Модальные окна - конец -->
 
-            <script type="text/javascript" src="scripts/jquery.min.js" charset="UTF-8"></script>
-            <script type="text/javascript" src="scripts/circletype.js" charset="UTF-8"></script>
-            <script type="text/javascript" src="scripts/plugins.js" charset="UTF-8"></script>
-            <script type="text/javascript" src="scripts/jquery.validate.min.js" charset="UTF-8"></script>
-            <script type="text/javascript" src="scripts/jquery.maskedinput.min.js" charset="UTF-8"></script>
-            <script type="text/javascript" src="scripts/scripts.js" charset="UTF-8"></script>
+            <script src="scripts/jquery.min.js"></script>
+            <script src="scripts/circletype.js"></script>
+            <script src="https://rawgit.com/peterhry/CircleType/master/dist/circletype.min.js"></script>
+            <script src="scripts/plugins.js"></script>
+            <script src="scripts/jquery.validate.min.js"></script>
+            <script src="scripts/jquery.maskedinput.min.js"></script>
+            <script src="scripts/scripts.js"></script>
         </footer>
     </div>
 </body>

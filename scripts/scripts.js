@@ -10,12 +10,62 @@ $(document).ready(function() {
     });
 
     //текст по дуге
-    $(function(){
-        if ($(window).width() > 1023){
-            $('.about_right ol li').circleType({radius: 800});
+    var circleType = document.querySelector('.about_right ol');
+    var circleTypeAttr = 'data-circle-type';
+    var circleTypeList = document.querySelectorAll('.about_right ol li');
+    var circleTypeListObj = {};
+    var curElem = '';
+
+    function addCircleType() {
+        if(circleType.getAttribute(circleTypeAttr) != 1){
+            for (var i = 0; i < circleTypeList.length; i++) {
+                curElem = 'elem' + i;
+                circleTypeListObj[curElem] = new CircleType(circleTypeList[i]);
+                circleTypeListObj[curElem].radius(800);
+            }
+
+            circleType.setAttribute(circleTypeAttr, 1);
         }
+    }
+
+    function destroyCircleType() {
+        if(circleType.getAttribute(circleTypeAttr) == 1) {
+            for (var i = 0; i < circleTypeList.length; i++) {
+                curElem = 'elem' + i;
+                circleTypeListObj[curElem].destroy();
+            }
+
+            circleType.setAttribute(circleTypeAttr, 0);
+        }
+    }
+
+    $('#add').click(function () {
+        addCircleType();
     });
 
+    $('#destroy').click(function () {
+        destroyCircleType();
+    });
+
+    function setCircleType() {
+        if ($(window).width() > 1023){
+            addCircleType();
+        }
+        else {
+            destroyCircleType();
+        }
+    }
+
+
+    //событие при изменении ширины окна
+    $(window).resize(function() {
+        setCircleType();
+    });
+
+    // срабатывает при загрузке страницы
+    $(function(){
+        setCircleType();
+    });
 
     //текст по дуге
     $('.serv_price div').circleType({radius: 150});
@@ -60,7 +110,7 @@ $(document).ready(function() {
 	});
 
     //Фикс меню
-    jQuery(function($) {
+    $(function($) {
         $(window).scroll(function(){
             if($(this).scrollTop()>76){
                 $('header').addClass('fixed');
@@ -72,35 +122,35 @@ $(document).ready(function() {
     });
 
     //модальные окна
-    /* зaсунем срaзу все элементы в переменные, чтoбы скрипту не прихoдилoсь их кaждый рaз искaть при кликaх */
-    var overlay = $('#overlay'); // пoдлoжкa, дoлжнa быть oднa нa стрaнице
-    var open_modal = $('.open_modal'); // все ссылки, кoтoрые будут oткрывaть oкнa
-    var close = $('.modal_close, #overlay'); // все, чтo зaкрывaет мoдaльнoе oкнo, т.е. крестик и oверлэй-пoдлoжкa
-    var modal = $('.modal_div'); // все скрытые мoдaльные oкнa
 
-     open_modal.click( function(event){ // лoвим клик пo ссылке с клaссoм open_modal
-         event.preventDefault(); // вырубaем стaндaртнoе пoведение
-         var div = $(this).attr('href'); // вoзьмем стрoку с селектoрoм у кликнутoй ссылки
-         overlay.fadeIn(400, //пoкaзывaем oверлэй
-             function(){ // пoсле oкoнчaния пoкaзывaния oверлэя
-                 $(div) // берем стрoку с селектoрoм и делaем из нее jquery oбъект
+    var overlay = $('#overlay');
+    var open_modal = $('.open_modal');
+    var close = $('.modal_close, #overlay');
+    var modal = $('.modal_div');
+
+     open_modal.click( function(event){
+         event.preventDefault();
+         var div = $(this).attr('href');
+         overlay.fadeIn(400,
+             function(){
+                 $(div)
                      .css('display', 'block')
-                     .animate({opacity: 1, top: '0%'}, 200); // плaвнo пoкaзывaем
+                     .animate({opacity: 1, top: '0%'}, 200);
          });
      });
 
-     close.click( function(){ // лoвим клик пo крестику или oверлэю
-        modal // все мoдaльные oкнa
-         .animate({opacity: 0, top: '0%'}, 200, // плaвнo прячем
-             function(){ // пoсле этoгo
+     close.click( function(){
+        modal
+         .animate({opacity: 0, top: '0%'}, 200,
+             function(){
                  $(this).css('display', 'none');
-                 overlay.fadeOut(400); // прячем пoдлoжку
+                 overlay.fadeOut(400);
              }
          );
      });
 
      // Валидация полей
-    $("#form").validate({
+    $('#form').validate({
          rules:{
             login:{
               required: true,
@@ -138,6 +188,44 @@ $(document).ready(function() {
              },
          }
      });
+     $('#modal_form').validate({
+          rules:{
+             login:{
+               required: true,
+               minlength: 4,
+               maxlength: 16,
+             },
+             tel:{
+               required: true,
+             },
+             mail:{
+                 required: true,
+                 email: true,
+             },
+             textarea:{
+               required: true,
+               minlength: 4,
+             },
+          },
+          messages: {
+              login:{
+                  required: "Это поле обязательно для заполнения",
+                  minlength: "Логин должен содержать минимум 4 символа",
+                  maxlength: "Максимальное число символов - 16",
+              },
+              textarea:{
+                  required: "Это поле обязательно для заполнения",
+                  minlength: "Текст должен содержать минимум 4 символа",
+              },
+              mail:{
+                  required: "Это поле обязательно для заполнения",
+                  email: "E-mail должен быть в формате name@domain.com",
+              },
+              tel:{
+                  required: "Это поле обязательно для заполнения",
+              },
+          }
+      });
 
       // Маска телефона
       $('input[type="tel"]').mask('+7 (999) 999 99 99');
